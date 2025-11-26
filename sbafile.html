@@ -16,6 +16,22 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23f0f4f8"/><path d="M0 0L100 100M100 0L0 100" stroke="%23e1e8f0" stroke-width="1"/></svg>');
+            background-size: 200px 200px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><circle cx="100" cy="100" r="80" fill="%23e8f4fc" opacity="0.3"/><circle cx="50" cy="50" r="30" fill="%23d4edda" opacity="0.2"/><circle cx="150" cy="150" r="40" fill="%23f8d7da" opacity="0.2"/></svg>');
+            background-size: 400px 400px;
+            background-position: right bottom;
+            z-index: -1;
         }
         
         .container {
@@ -26,26 +42,61 @@
         }
         
         header {
-            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(74, 100, 145, 0.9));
             color: white;
             padding: 25px 0;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+            border-bottom: 5px solid #2ecc71;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="20" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: 80px 80px;
         }
         
         .header-content h1 {
             margin-bottom: 10px;
             font-size: 2.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
         
         .login-section {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             max-width: 500px;
             margin: 50px auto;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
         }
         
         .user-type-selector {
@@ -54,6 +105,7 @@
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
         .user-type {
@@ -103,12 +155,14 @@
             border-radius: 6px;
             font-size: 16px;
             transition: border 0.3s;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         
         input:focus, select:focus {
             border-color: #3498db;
             outline: none;
             box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            background-color: white;
         }
         
         button {
@@ -122,14 +176,17 @@
             width: 100%;
             transition: background-color 0.3s;
             font-weight: bold;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
         
         button:hover {
             background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 8px rgba(0,0,0,0.15);
         }
         
         .user-info {
-            background-color: #3498db;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
@@ -137,6 +194,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
         
         .logout-btn {
@@ -157,10 +216,24 @@
         }
         
         .input-section, .stats-section, .history-section, .school-stats {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .input-section::before, .stats-section::before, .history-section::before, .school-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
         }
         
         .input-section {
@@ -183,14 +256,26 @@
             margin-bottom: 20px;
             padding-bottom: 12px;
             border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
         }
         
         .bmi-result {
             margin-top: 20px;
             padding: 20px;
-            background-color: #ecf0f1;
+            background-color: rgba(236, 240, 241, 0.8);
             border-radius: 8px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         .bmi-value {
@@ -205,10 +290,71 @@
             font-size: 18px;
         }
         
+        /* BMI進度條樣式 */
+        .bmi-progress-container {
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .bmi-progress-bar {
+            height: 30px;
+            background: linear-gradient(to right, 
+                #3498db 0%, 
+                #3498db 18.5%, 
+                #2ecc71 18.5%, 
+                #2ecc71 23%, 
+                #f39c12 23%, 
+                #f39c12 25%, 
+                #e67e22 25%, 
+                #e67e22 30%, 
+                #e74c3c 30%, 
+                #e74c3c 100%);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .bmi-progress-marker {
+            position: absolute;
+            top: -5px;
+            width: 4px;
+            height: 40px;
+            background-color: #2c3e50;
+            transform: translateX(-50%);
+            z-index: 10;
+            border-radius: 2px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+        
+        .bmi-progress-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        
+        .bmi-progress-label {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .bmi-advice {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: rgba(248, 249, 250, 0.8);
+            font-size: 16px;
+            line-height: 1.5;
+            border-left: 4px solid #3498db;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
         th, td {
@@ -218,37 +364,42 @@
         }
         
         th {
-            background-color: #f2f2f2;
+            background-color: rgba(242, 242, 242, 0.8);
             font-weight: bold;
             color: #2c3e50;
         }
         
         tr:hover {
-            background-color: #f9f9f9;
+            background-color: rgba(249, 249, 249, 0.8);
         }
         
         .average-bmi {
             font-size: 18px;
             margin-top: 10px;
             padding: 15px;
-            background-color: #e8f4fc;
+            background-color: rgba(232, 244, 252, 0.8);
             border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .bmi-underweight {
+            color: #3498db;
         }
         
         .bmi-normal {
             color: #2ecc71;
         }
         
-        .bmi-overweight {
+        .bmi-mild-obese {
+            color: #f39c12;
+        }
+        
+        .bmi-moderate-obese {
             color: #e67e22;
         }
         
-        .bmi-obese {
+        .bmi-severe-obese {
             color: #e74c3c;
-        }
-        
-        .bmi-underweight {
-            color: #3498db;
         }
         
         .student-list {
@@ -259,16 +410,30 @@
         }
         
         .student-card {
-            background-color: #f8f9fa;
+            background-color: rgba(248, 249, 250, 0.8);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .student-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #3498db, #2ecc71);
         }
         
         .student-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .student-name {
@@ -281,6 +446,23 @@
             font-size: 24px;
             font-weight: bold;
             margin: 10px 0;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+        
+        .demo-accounts {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 6px;
+            font-size: 14px;
+            color: #666;
+            border-left: 4px solid #f39c12;
         }
         
         @media (max-width: 768px) {
@@ -341,8 +523,8 @@
                 <button type="button" id="school-login-btn">登入</button>
             </form>
             
-            <div style="margin-top: 20px; font-size: 14px; color: #666;">
-                <p>演示帳戶:</p>
+            <div class="demo-accounts">
+                <p><strong>演示帳戶:</strong></p>
                 <p>家長 - 用戶名: parent, 密碼: parent123</p>
                 <p>學校 - 用戶名: school, 密碼: school123</p>
             </div>
@@ -376,12 +558,14 @@
                         </div>
                         <div class="form-group">
                             <label for="height">身高 (厘米):</label>
-                            <input type="number" id="height" min="50" max="250" step="0.1" required>
+                            <input type="number" id="height" min="90" max="200" step="0.1" required>
+                            <small style="color: #666;">範圍: 90-200 厘米 (0.9-2.0 米)</small>
                         </div>
                         
                         <div class="form-group">
                             <label for="weight">體重 (公斤):</label>
-                            <input type="number" id="weight" min="10" max="200" step="0.1" required>
+                            <input type="number" id="weight" min="20" max="200" step="0.1" required>
+                            <small style="color: #666;">範圍: 20-200 公斤</small>
                         </div>
                         
                         <button type="button" id="calculate-bmi">計算BMI</button>
@@ -389,7 +573,26 @@
                     
                     <div id="bmi-result" class="bmi-result" style="display: none;">
                         <p>BMI值: <span class="bmi-value" id="bmi-value">0</span></p>
-                        <p class="bmi-category" id="bmi-category">正常體重</p>
+                        <p class="bmi-category" id="bmi-category">正常</p>
+                        
+                        <!-- BMI進度條 -->
+                        <div class="bmi-progress-container">
+                            <div class="bmi-progress-bar">
+                                <div class="bmi-progress-marker" id="bmi-marker"></div>
+                            </div>
+                            <div class="bmi-progress-labels">
+                                <div class="bmi-progress-label">過輕<br>&lt;18.5</div>
+                                <div class="bmi-progress-label">正常<br>18.5-22.9</div>
+                                <div class="bmi-progress-label">輕度肥胖<br>23-24.9</div>
+                                <div class="bmi-progress-label">中度肥胖<br>25-29.9</div>
+                                <div class="bmi-progress-label">嚴重肥胖<br>≥30</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 健康建議 -->
+                        <div class="bmi-advice" id="bmi-advice">
+                            <!-- 健康建議將通過JavaScript動態添加 -->
+                        </div>
                     </div>
                 </section>
                 
@@ -402,10 +605,11 @@
                     <div style="margin-top: 20px;">
                         <h3>BMI分類參考</h3>
                         <ul style="list-style-type: none; padding: 0;">
-                            <li><span class="bmi-underweight">● 體重過輕:</span> BMI &lt; 18.5</li>
-                            <li><span class="bmi-normal">● 正常體重:</span> 18.5 ≤ BMI &lt; 24</li>
-                            <li><span class="bmi-overweight">● 超重:</span> 24 ≤ BMI &lt; 27</li>
-                            <li><span class="bmi-obese">● 肥胖:</span> BMI ≥ 27</li>
+                            <li><span class="bmi-underweight">● 過輕:</span> BMI &lt; 18.5</li>
+                            <li><span class="bmi-normal">● 正常:</span> 18.5 ≤ BMI &lt; 23</li>
+                            <li><span class="bmi-mild-obese">● 輕度肥胖:</span> 23 ≤ BMI &lt; 25</li>
+                            <li><span class="bmi-moderate-obese">● 中度肥胖:</span> 25 ≤ BMI &lt; 30</li>
+                            <li><span class="bmi-severe-obese">● 嚴重肥胖:</span> BMI ≥ 30</li>
                         </ul>
                     </div>
                 </section>
@@ -429,7 +633,7 @@
                             <!-- BMI記錄將通過JavaScript動態添加 -->
                         </tbody>
                     </table>
-                    <p id="no-records-message">暫無BMI記錄</p>
+                    <p id="no-records-message" class="no-data">暫無BMI記錄</p>
                 </section>
             </div>
         </div>
@@ -450,7 +654,7 @@
                     <div class="student-list" id="student-list">
                         <!-- 學生卡片將通過JavaScript動態添加 -->
                     </div>
-                    <p id="no-student-data">暫無學生BMI數據</p>
+                    <p id="no-student-data" class="no-data">暫無學生BMI數據</p>
                 </section>
                 
                 <section class="history-section">
@@ -472,20 +676,65 @@
                             <!-- 所有BMI記錄將通過JavaScript動態添加 -->
                         </tbody>
                     </table>
-                    <p id="no-all-records-message">暫無BMI記錄</p>
+                    <p id="no-all-records-message" class="no-data">暫無BMI記錄</p>
                 </section>
             </div>
         </div>
     </div>
 
     <script>
-        // 初始化數據 - 使用與舊版本相同的數據結構
+        // 初始化數據
         let bmiRecords = JSON.parse(localStorage.getItem('bmiRecords')) || {
-            'Chan Tai Man': [],
-            'Wong Siu Ming': [],
-            'Lee Mei Ling': [],
-            'Cheung Ho Yin': [],
-            'Lam Ka Yi': []
+            'Chan Tai Man': [
+                {
+                    date: new Date().toLocaleString(),
+                    height: '155',
+                    weight: '45',
+                    bmi: 18.7,
+                    category: '正常',
+                    categoryClass: 'bmi-normal'
+                }
+            ],
+            'Wong Siu Ming': [
+                {
+                    date: new Date().toLocaleString(),
+                    height: '160',
+                    weight: '65',
+                    bmi: 25.4,
+                    category: '中度肥胖',
+                    categoryClass: 'bmi-moderate-obese'
+                }
+            ],
+            'Lee Mei Ling': [
+                {
+                    date: new Date().toLocaleString(),
+                    height: '150',
+                    weight: '40',
+                    bmi: 17.8,
+                    category: '過輕',
+                    categoryClass: 'bmi-underweight'
+                }
+            ],
+            'Cheung Ho Yin': [
+                {
+                    date: new Date().toLocaleString(),
+                    height: '165',
+                    weight: '70',
+                    bmi: 25.7,
+                    category: '中度肥胖',
+                    categoryClass: 'bmi-moderate-obese'
+                }
+            ],
+            'Lam Ka Yi': [
+                {
+                    date: new Date().toLocaleString(),
+                    height: '148',
+                    weight: '50',
+                    bmi: 22.8,
+                    category: '正常',
+                    categoryClass: 'bmi-normal'
+                }
+            ]
         };
         
         const students = {
@@ -494,6 +743,30 @@
             'Lee Mei Ling': { class: '6B', gender: '女' },
             'Cheung Ho Yin': { class: '5A', gender: '男' },
             'Lam Ka Yi': { class: '5B', gender: '女' }
+        };
+        
+        // 健康建議數據
+        const healthAdvice = {
+            'underweight': {
+                title: '體重過輕建議',
+                message: '你的體重稍微偏輕，建議：\n• 增加營養豐富的食物攝入\n• 適當增加蛋白質和健康脂肪\n• 保持規律的飲食習慣\n• 適度進行力量訓練增加肌肉量\n• 保證充足的睡眠'
+            },
+            'normal': {
+                title: '健康體重建議',
+                message: '恭喜！你的體重處於健康範圍。建議：\n• 保持均衡飲食\n• 每天至少進行60分鐘中等強度運動\n• 多吃水果蔬菜\n• 限制高糖高脂食物\n• 保持規律作息'
+            },
+            'mild_obese': {
+                title: '輕度肥胖建議',
+                message: '你的體重稍微超標，建議：\n• 減少高熱量食物攝入\n• 增加蔬菜水果比例\n• 每天保證60分鐘以上運動\n• 減少屏幕時間\n• 建立健康的飲食習慣'
+            },
+            'moderate_obese': {
+                title: '中度肥胖建議',
+                message: '你的體重明顯超標，建議：\n• 諮詢醫生或營養師制定減重計劃\n• 控制食物份量\n• 增加日常活動量\n• 減少含糖飲料\n• 尋求家人支持共同建立健康生活方式'
+            },
+            'severe_obese': {
+                title: '嚴重肥胖建議',
+                message: '你的體重嚴重超標，建議：\n• 立即諮詢醫生或營養師\n• 制定專業的減重計劃\n• 增加規律運動\n• 調整飲食結構\n• 尋求專業心理支持\n• 與家人一起建立健康生活方式'
+            }
         };
         
         // 用戶類型選擇
@@ -554,8 +827,15 @@
                 return;
             }
             
-            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-                alert('請輸入有效的數值');
+            // 檢查身高範圍 (90-200厘米 = 0.9-2.0米)
+            if (isNaN(height) || height < 0.9 || height > 2.0) {
+                alert('請輸入有效的身高數值 (90-200 厘米)');
+                return;
+            }
+            
+            // 檢查體重範圍 (20-200公斤)
+            if (isNaN(weight) || weight < 20 || weight > 200) {
+                alert('請輸入有效的體重數值 (20-200 公斤)');
                 return;
             }
             
@@ -563,20 +843,28 @@
             const bmi = weight / (height * height);
             const roundedBmi = Math.round(bmi * 10) / 10;
             
-            // 確定BMI分類
-            let category, categoryClass;
+            // 確定BMI分類 - 使用新的分類標準
+            let category, categoryClass, adviceKey;
             if (bmi < 18.5) {
-                category = "體重過輕";
+                category = "過輕";
                 categoryClass = "bmi-underweight";
-            } else if (bmi >= 18.5 && bmi < 24) {
-                category = "正常體重";
+                adviceKey = "underweight";
+            } else if (bmi >= 18.5 && bmi < 23) {
+                category = "正常";
                 categoryClass = "bmi-normal";
-            } else if (bmi >= 24 && bmi < 27) {
-                category = "超重";
-                categoryClass = "bmi-overweight";
+                adviceKey = "normal";
+            } else if (bmi >= 23 && bmi < 25) {
+                category = "輕度肥胖";
+                categoryClass = "bmi-mild-obese";
+                adviceKey = "mild_obese";
+            } else if (bmi >= 25 && bmi < 30) {
+                category = "中度肥胖";
+                categoryClass = "bmi-moderate-obese";
+                adviceKey = "moderate_obese";
             } else {
-                category = "肥胖";
-                categoryClass = "bmi-obese";
+                category = "嚴重肥胖";
+                categoryClass = "bmi-severe-obese";
+                adviceKey = "severe_obese";
             }
             
             // 顯示結果
@@ -585,10 +873,16 @@
             document.getElementById('bmi-category').className = 'bmi-category ' + categoryClass;
             document.getElementById('bmi-result').style.display = 'block';
             
+            // 更新BMI進度條
+            updateBmiProgressBar(roundedBmi);
+            
+            // 更新健康建議
+            updateHealthAdvice(adviceKey);
+            
             // 更新當前學生顯示
             document.getElementById('current-student').textContent = studentName;
             
-            // 保存記錄 - 使用與舊版本相同的數據結構
+            // 保存記錄
             const record = {
                 date: new Date().toLocaleString(),
                 height: document.getElementById('height').value,
@@ -625,6 +919,31 @@
             document.getElementById('height').value = '';
             document.getElementById('weight').value = '';
         });
+        
+        // 更新BMI進度條
+        function updateBmiProgressBar(bmi) {
+            const marker = document.getElementById('bmi-marker');
+            // BMI範圍: 15-35，將BMI映射到0-100%
+            let position = ((bmi - 15) / (35 - 15)) * 100;
+            
+            // 確保位置在0-100%範圍內
+            position = Math.max(0, Math.min(100, position));
+            
+            marker.style.left = `${position}%`;
+        }
+        
+        // 更新健康建議
+        function updateHealthAdvice(adviceKey) {
+            const adviceElement = document.getElementById('bmi-advice');
+            const advice = healthAdvice[adviceKey];
+            
+            if (advice) {
+                adviceElement.innerHTML = `
+                    <h3>${advice.title}</h3>
+                    <p>${advice.message.replace(/\n/g, '<br>')}</p>
+                `;
+            }
+        }
         
         // 顯示介面
         function showInterface(interfaceId) {
